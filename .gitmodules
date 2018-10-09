@@ -1,0 +1,3 @@
+[submodule "volto-starter-kit"]
+	path = volto-starter-kit
+	url = https://github.com/plone/volto-starter-kit.git
