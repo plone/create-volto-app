@@ -1,7 +1,7 @@
 {
   "name": "create-volto-app",
-  "version": "1.0.0",
-  "description": "Create volto app",
+  "version": "0.0.1",
+  "description": "Create Volto App",
   "main": "index.js",
   "license": "MIT",
   "author": "",
