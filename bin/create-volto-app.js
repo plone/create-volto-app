@@ -6,7 +6,7 @@ const lib = require('..');
 const pkg = require('../package.json');
 
 const messages = lib.messages;
-const createPloneApp = lib.createPloneApp;
+const createVoltoApp = lib.createVoltoApp;
 
 let projectName;
 
@@ -17,14 +17,10 @@ program
   .action(function(name) {
     projectName = name;
   })
-  .option('-e, --example <example-path>', messages.exampleHelp())
   .allowUnknownOption()
   .on('--help', messages.help)
   .parse(process.argv);
 
-const example = program.example;
-
-createPloneApp({
+createVoltoApp({
   projectName,
-  example,
 });
