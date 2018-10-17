@@ -1,5 +1,5 @@
 {
-  "name": "create-volto-app",
+  "name": "@plone/create-volto-app",
   "version": "0.1.0",
   "description": "Create Volto App",
   "main": "index.js",
