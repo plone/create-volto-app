@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.1.1 (unreleased)
+
+### Changed
+
+- Updated Volto to 0.9.5.
+
 ## 0.1.0 (2018-10-17)
 
 ### Added
