@@ -1,6 +1,6 @@
 {
   "name": "@plone/create-volto-app",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Create Volto App",
   "main": "index.js",
   "license": "MIT",
