@@ -1,5 +1,11 @@
 # Change Log
 
+## 1.0.0 (2018-12-24)
+
+### Changed
+
+- Updated boilerplate and use Volto to 1.1.0 @sneridagh
+
 ## 1.0.0 (2018-10-31)
 
 ### Changed
