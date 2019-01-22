@@ -1,6 +1,14 @@
 # Change Log
 
-## 1.0.0 (2018-12-24)
+## 1.2.0 (2019-01-22)
+
+- Updated boilerplate and use Volto to 1.2.0 @sneridagh
+
+## 1.1.1 (2018-12-24)
+
+- Fix brownbag release @sneridagh
+
+## 1.1.0 (2018-12-24)
 
 ### Changed
 
