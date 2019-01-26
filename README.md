@@ -1,4 +1,7 @@
 # create-volto-app
+
+[![Build Status](https://travis-ci.org/plone/create-volto-app.svg?branch=master)](https://travis-ci.org/plone/create-volto-app)
+
 Use: `create-volto-app <app-name>` for getting the boilerplate.
 
 ### `yarn start`

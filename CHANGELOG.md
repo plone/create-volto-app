@@ -1,5 +1,9 @@
 # Change Log
 
+## 1.2.1 (unreleased)
+
+- Add Travis using RF tests from Volto @sneridagh
+
 ## 1.2.0 (2019-01-22)
 
 - Updated boilerplate and use Volto to 1.2.0 @sneridagh
