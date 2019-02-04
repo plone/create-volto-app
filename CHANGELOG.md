@@ -1,5 +1,7 @@
 # Change Log
 
+## 1.2.2 (unreleased)
+
 ## 1.2.1 (2019-02-04)
 
 - Add Travis using RF tests from Volto @sneridagh
