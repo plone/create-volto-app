@@ -3,6 +3,8 @@
 ## 1.2.1 (unreleased)
 
 - Add Travis using RF tests from Volto @sneridagh
+- Fix test setup (changes in boilerplate) @sneridagh
+- Loosen node version requirements (changes in boilerplate) @sneridagh
 
 ## 1.2.0 (2019-01-22)
 
