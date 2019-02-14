@@ -2,6 +2,9 @@
 
 ## 1.3.1 (unreleased)
 
+- Improve eslint resolvers for special paths (@package, @plone/volto and ~), so
+  IDEs do not complain any more with no-unresolved active @sneridagh
+
 ## 1.3.0 (2019-02-13)
 
 - Update to 1.3.0 @sneridagh
