@@ -1,9 +1,11 @@
 # Change Log
 
-## 1.3.1 (unreleased)
+## 1.4.0 (2019-02-15)
 
 - Improve eslint resolvers for special paths (@package, @plone/volto and ~), so
   IDEs do not complain any more with no-unresolved active @sneridagh
+- Add stylint recommended config to the boilerplate @sneridagh
+- Bump Volto to 1.4.0 @sneridagh
 
 ## 1.3.0 (2019-02-13)
 
