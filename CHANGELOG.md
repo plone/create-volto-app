@@ -2,6 +2,8 @@
 
 ## 1.4.1 (unreleased)
 
+- Add .npmignore for exclude volto-stater-kit from the packaging @sneridagh
+
 ## 1.4.0 (2019-02-15)
 
 - Improve eslint resolvers for special paths (@package, @plone/volto and ~), so
