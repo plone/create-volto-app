@@ -1,5 +1,9 @@
 # Change Log
 
+## 1.5.1 (2019-02-19)
+
+- Add missing extras to boilerplate @sneridagh
+
 ## 1.5.0 (2019-02-19)
 
 - Add .npmignore for exclude volto-stater-kit .git from the packaging
