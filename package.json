@@ -1,16 +1,40 @@
 {
   "name": "@plone/create-volto-app",
-  "version": "1.5.1",
   "description": "Create Volto App",
-  "main": "index.js",
+  "homepage": "https://www.npmjs.com/package/@plone/create-volto-app",
+  "maintainers": [
+    {
+      "name": "Plone Foundation",
+      "email": "plone-developers@lists.sourceforge.net",
+      "url": "http://plone.org"
+    }
+  ],
   "license": "MIT",
-  "author": "",
-  "engines": {
-    "node": ">=6"
+  "version": "1.5.1",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/plone/create-volto-app.git"
   },
-  "repository": "",
+  "bugs": {
+    "url": "https://github.com/plone/create-volto-app/issues",
+    "email": "plone-developers@lists.sourceforge.net"
+  },
+  "keywords": [
+    "react",
+    "plone",
+    "volto",
+    "webpack",
+    "ssr",
+    "universal",
+    "isomorphic",
+    "pastanaga"
+  ],
+  "main": "index.js",
   "bin": {
     "create-volto-app": "./bin/create-volto-app.js"
+  },
+  "engines": {
+    "node": ">=6"
   },
   "dependencies": {
     "ansi-escapes": "2.0.0",
@@ -24,15 +48,5 @@
     "mz": "2.6.0",
     "ora": "1.2.0",
     "promise": "7.1.1"
-  },
-  "keywords": [
-    "react",
-    "plone",
-    "volto",
-    "webpack",
-    "ssr",
-    "universal",
-    "isomorphic",
-    "pastanaga"
-  ]
+  }
 }
