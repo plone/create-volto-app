@@ -1,8 +1,14 @@
 # Change Log
 
-## 1.4.1 (unreleased)
+## 1.5.1 (2019-02-19)
 
-- Add .npmignore for exclude volto-stater-kit from the packaging @sneridagh
+- Add missing extras to boilerplate @sneridagh
+
+## 1.5.0 (2019-02-19)
+
+- Add .npmignore for exclude volto-stater-kit .git from the packaging
+  @sneridagh
+- Bump Volto to 1.5.0 @sneridagh
 
 ## 1.4.0 (2019-02-15)
 
