@@ -7,6 +7,7 @@
 ## 1.5.1 (2019-02-19)
 
 - Add missing extras to boilerplate @sneridagh
+- Add .gitignore to npm package @nileshgulia1
 
 ## 1.5.0 (2019-02-19)
 
