@@ -3,6 +3,7 @@
 ## 1.5.2 (2019-02-20)
 
 - Improve metadata in package.json @davilima6
+- Override and rename .gitignore to npm package @nileshgulia1
 
 ## 1.5.1 (2019-02-19)
 
