@@ -34,7 +34,7 @@
     "create-volto-app": "./bin/create-volto-app.js"
   },
   "engines": {
-    "node": ">=6"
+    "node": "^8 || ^10"
   },
   "dependencies": {
     "ansi-escapes": "2.0.0",
