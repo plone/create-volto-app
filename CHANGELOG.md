@@ -1,5 +1,9 @@
 # Change Log
 
+## 1.5.3 (2019-02-20)
+
+- Override,remove .npmignore and add .gitignore in npm package @nileshgulia1
+
 ## 1.5.2 (2019-02-20)
 
 - Improve metadata in package.json @davilima6
