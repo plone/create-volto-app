@@ -1,5 +1,9 @@
 # Change Log
 
+## 1.6.1 (2019-03-01)
+
+- Bump to Volto 1.6.1 @sneridagh
+
 ## 1.6.0 (2019-03-01)
 
 - Override, remove .npmignore and add .gitignore in npm package @nileshgulia1
