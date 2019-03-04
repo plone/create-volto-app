@@ -1,5 +1,11 @@
 # Change Log
 
+## 1.7.1 (unreleased)
+
+### Added
+
+### Changes
+
 ## 1.7.0 (2019-03-04)
 
 - Bump to Volto 1.7.0 @sneridagh
