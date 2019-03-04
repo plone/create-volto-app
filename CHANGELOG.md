@@ -1,5 +1,9 @@
 # Change Log
 
+## 1.6.2 (unreleased)
+
+- Bump to Volto 1.7.0 @sneridagh
+
 ## 1.6.1 (2019-03-01)
 
 - Bump to Volto 1.6.1 @sneridagh
