@@ -4,6 +4,8 @@
 
 ### Added
 
+- Bump to Volto 1.8.0 @sneridagh
+
 ### Changes
 
 ## 1.7.0 (2019-03-04)
