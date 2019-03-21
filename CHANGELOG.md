@@ -1,10 +1,8 @@
 # Change Log
 
-## 1.8.2 (unreleased)
+## 1.8.2 (2019-03-21)
 
-### Added
-
-### Changes
+- Bump to Volto 1.8.2 @sneridagh
 
 ## 1.8.1 (2019-03-19)
 
