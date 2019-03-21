@@ -1,10 +1,8 @@
 # Change Log
 
-## 1.8.3 (unreleased)
+## 1.8.3 (2019-03-21)
 
-### Added
-
-### Changes
+- Add `main` section to theme.config @sneridagh
 
 ## 1.8.2 (2019-03-21)
 
