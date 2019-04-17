@@ -2,9 +2,7 @@
 
 ## 2.1.2 (unreleased)
 
-### Added
-
-### Changes
+- Bump to use Volto 2.1.3 @sneridagh
 
 ## 2.1.1 (2019-04-04)
 
