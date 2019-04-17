@@ -1,6 +1,6 @@
 # Change Log
 
-## 2.1.2 (unreleased)
+## 2.1.3 (2019-04-17)
 
 - Bump to use Volto 2.1.3 @sneridagh
 
