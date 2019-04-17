@@ -49,7 +49,6 @@ install:
   - pip install -r requirements-tests.txt;
   - npm -g install ./
   - create-volto-app my-volto-app
-  - (cd my-volto-app && yarn build)
 before_script:
   - 'export DISPLAY=:99.0'
   - Xvfb :99 -screen 0 1024x768x24 > /dev/null 2>&1 &
