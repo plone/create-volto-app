@@ -81,6 +81,6 @@
     "ora": "1.2.0",
     "promise": "7.1.1",
     "release-it": "^10.2.0",
-    "start-server-and-test": "^1.9.0"
+    "start-server-and-test": "1.7.13"
   }
 }
