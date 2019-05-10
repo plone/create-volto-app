@@ -2,9 +2,7 @@
 
 ## 3.0.1 (unreleased)
 
-### Added
-
-### Changes
+- Bump to use Volto 3.0.1 @sneridagh
 
 ## 3.0.0 (2019-05-10)
 
