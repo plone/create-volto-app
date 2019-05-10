@@ -1,10 +1,8 @@
 # Change Log
 
-## 3.0.2 (unreleased)
+## 3.0.2 (2019-05-10)
 
-### Added
-
-### Changes
+- Better direct dependency tree, not depend in cypress and other tools @sneridagh
 
 ## 3.0.1 (2019-05-10)
 
