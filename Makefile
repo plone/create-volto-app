@@ -7,10 +7,10 @@ build-backend:  ## Build Plone 5.2
 	(cd api && bin/pip install -r requirements.txt)
 	(cd api && bin/buildout -c plone-5.2.x.cfg)
 
-test-acceptance:
-	PYTHONPATH=$(pwd)/tests ZSERVER_PORT=55001 api/bin/pybot -v API:Plone -v BROWSER:headlesschrome tests
+test-acceptance-server:
+	ZSERVER_PORT=55001 CONFIGURE_PACKAGES=plone.app.contenttypes,plone.restapi,kitconcept.voltodemo,kitconcept.voltodemo.cors APPLY_PROFILES=plone.app.contenttypes:plone-content,plone.restapi:default,kitconcept.voltodemo:default ./api/bin/robot-server plone.app.robotframework.testing.PLONE_ROBOT_TESTING
 
 test-acceptance-guillotina:
-	PYTHONPATH=$(pwd)/tests pybot -v BROWSER:headlesschrome -v API:Guillotina tests;
+	docker-compose -f g-api/docker-compose.yml up > /dev/null
 
 .PHONY: all test-acceptance
