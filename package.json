@@ -10,7 +10,7 @@
     }
   ],
   "license": "MIT",
-  "version": "2.1.3",
+  "version": "3.0.0",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/plone/create-volto-app.git"
@@ -34,6 +34,8 @@
     "create-volto-app": "./bin/create-volto-app.js"
   },
   "scripts": {
+    "cypress:run": "CYPRESS_API=plone cypress run",
+    "cypress:run:guillotina": "CYPRESS_API=guillotina cypress run",
     "cy:install": "cypress install",
     "cy:test:fixture:setup": "node cypress/support/reset-fixture.js",
     "cy:test:fixture:teardown": "node cypress/support/reset-fixture.js teardown",
