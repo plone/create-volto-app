@@ -2,9 +2,8 @@
 
 ## 2.1.4 (unreleased)
 
-### Added
-
-### Changes
+- Bump to use Volto 3.0.0 @sneridagh
+- Use Cypress instead of RF for acceptance tests @sneridagh
 
 ## 2.1.3 (2019-04-17)
 
