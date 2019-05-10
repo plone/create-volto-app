@@ -10,28 +10,25 @@ matrix:
       env: TEST_SUITE=guillotina
 cache:
   pip: true
+  yarn: true
   directories:
-    - node_modules
     - $HOME/buildout-cache
+    - ~/.cache
 sudo: required
 services:
   - docker
 addons:
   apt:
-    sources:
-      - google-chrome
     packages:
-      - google-chrome-stable
+      - xvfb
+      - libgtk2.0-0
+      - libnotify-dev
+      - libgconf-2-4
+      - libnss3
+      - libxss1
+      - libasound2
 before_install:
   - nvm install 10.14.2;
-  - if [ "$TEST_SUITE" != "unit" ]; then
-    mkdir webdriver;
-    wget https://github.com/mozilla/geckodriver/releases/download/v0.20.0/geckodriver-v0.20.0-linux64.tar.gz;
-    tar -xzf geckodriver-v0.20.0-linux64.tar.gz -C webdriver;
-    wget https://chromedriver.storage.googleapis.com/2.40/chromedriver_linux64.zip;
-    unzip chromedriver_linux64.zip -d webdriver;
-    export PATH=$PATH:$(pwd)/webdriver;
-    fi
   - if [ "$TEST_SUITE" == "plone" ]; then
     mkdir -p $HOME/buildout-cache/{eggs,downloads};
     mkdir $HOME/.buildout;
@@ -44,17 +41,14 @@ install:
   - if [ "$TEST_SUITE" == "plone" ]; then
     make build-backend;
     fi
-  - pip install -r requirements-tests.txt;
   - npm -g install ./
   - create-volto-app my-volto-app
-before_script:
-  - 'export DISPLAY=:99.0'
-  - Xvfb :99 -screen 0 1024x768x24 > /dev/null 2>&1 &
-  - sleep 3
+  - yarn install --frozen-lockfile
+  - yarn cy:install
 script:
   - if [ "$TEST_SUITE" == "guillotina" ]; then
-    PYTHONPATH=$(pwd)/tests travis_retry pybot -v BROWSER:headlesschrome -v API:Guillotina tests;
+    yarn ci:cypress:run:guillotina;
     fi
   - if [ "$TEST_SUITE" == "plone" ]; then
-    PYTHONPATH=$(pwd)/tests ZSERVER_PORT=55001 travis_retry api/bin/pybot -v BROWSER:headlesschrome -v API:Plone tests;
+    yarn ci:cypress:run;
     fi
