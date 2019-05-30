@@ -1,10 +1,8 @@
 # Change Log
 
-## 3.0.5 (unreleased)
+## 3.0.5 (2019-05-30)
 
-### Added
-
-### Changes
+- Bump to use Volto 3.0.4 @sneridagh
 
 ## 3.0.4 (2019-05-13)
 
