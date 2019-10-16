@@ -2,9 +2,14 @@
 
 ## 3.2.1 (unreleased)
 
-### Added
-
 ### Changes
+
+- Fix bogus release @sneridagh
+
+### Internal
+
+- Fix Cypress tests failing @sneridagh
+- Add retries to Cypress @sneridagh
 
 ## 3.2.0 (2019-10-16)
 
