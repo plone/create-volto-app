@@ -10,7 +10,7 @@
     }
   ],
   "license": "MIT",
-  "version": "3.1.0",
+  "version": "3.2.0",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/plone/create-volto-app.git"
@@ -49,12 +49,12 @@
     "release": "release-it"
   },
   "release-it": {
-    "scripts": {
-      "changelog": "node changelogupdater.js excerpt",
-      "beforeStage": "node changelogupdater.js bump ${version}",
-      "afterRelease": "node changelogupdater.js back ${version} && git add . && git ci -am 'Back to development' && git push"
+    "hooks": {
+      "after:bump": "node changelogupdater.js bump ${version}",
+      "after:release": "node changelogupdater.js back ${version} && git add . && git ci -am 'Back to development' && git push"
     },
     "git": {
+      "changelog": "node changelogupdater.js excerpt",
       "requireUpstream": false,
       "requireCleanWorkingDir": false
     },
@@ -81,6 +81,9 @@
     "promise": "7.1.1"
   },
   "devDependencies": {
-    "release-it": "^10.2.0"
+    "release-it": "^12.4.3"
+  },
+  "resolutions": {
+    "razzle/webpack-dev-server": "3.2.0"
   }
 }

@@ -2,9 +2,13 @@
 
 ## 3.1.1 (unreleased)
 
-### Added
-
 ### Changes
+
+- Fixed `webpack-dev-server` being verbose launching dev server `yarn start` and leading to confusion @sneridagh
+
+### Internal
+
+- Update release-it @sneridagh
 
 ## 3.1.0 (2019-06-14)
 
