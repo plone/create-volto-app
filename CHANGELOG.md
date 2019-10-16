@@ -1,6 +1,6 @@
 # Change Log
 
-## 3.2.1 (unreleased)
+## 3.2.1 (2019-10-16)
 
 ### Changes
 
