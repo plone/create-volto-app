@@ -34,8 +34,8 @@
     "create-volto-app": "./bin/create-volto-app.js"
   },
   "scripts": {
-    "cypress:run": "CYPRESS_API=plone CYPRESS_RETRIES=2 cypress run",
-    "cypress:run:guillotina": "CYPRESS_API=guillotina CYPRESS_RETRIES=2 cypress run",
+    "cypress:run": "CYPRESS_API=plone cypress run",
+    "cypress:run:guillotina": "CYPRESS_API=guillotina cypress run",
     "cy:install": "cypress install",
     "cy:test:fixture:setup": "node cypress/support/reset-fixture.js",
     "cy:test:fixture:teardown": "node cypress/support/reset-fixture.js teardown",
