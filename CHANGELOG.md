@@ -2,9 +2,9 @@
 
 ## 4.0.0 (unreleased)
 
-### Added
-
 ### Changes
+
+- Fixed issue when the install command does not install @alpha versions @sneridagh
 
 ## 4.0.0-alpha.0 (2019-11-01)
 

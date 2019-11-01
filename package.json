@@ -49,6 +49,10 @@
     "release": "release-it",
     "release-alpha": "release-it major --preRelease=alpha"
   },
+  "prettier": {
+    "trailingComma": "all",
+    "singleQuote": true
+  },
   "release-it": {
     "hooks": {
       "after:bump": "node changelogupdater.js bump ${version}",

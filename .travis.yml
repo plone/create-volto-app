@@ -36,14 +36,12 @@ before_install:
     echo "download-cache = $HOME/buildout-cache/downloads" >> $HOME/.buildout/default.cfg;
     echo "eggs-directory = $HOME/buildout-cache/eggs" >> $HOME/.buildout/default.cfg;
     fi
-  - git submodule update --init
 install:
   - if [ "$TEST_SUITE" == "plone" ]; then
     make build-backend;
     fi
   - npm -g install ./
   - create-volto-app my-volto-app
-  - cat my-volto-app/package.json
   - yarn install --frozen-lockfile
   - yarn add cypress cypress-file-upload start-server-and-test xmlrpc
   - yarn cy:install
