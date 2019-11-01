@@ -2,9 +2,9 @@
 
 ## 4.0.0 (unreleased)
 
-### Added
-
 ### Changes
+
+- Bring back resolutions for override webpack-dev-server version, due to unwanted messages in the console @sneridagh
 
 ## 4.0.0-alpha.1 (2019-11-01)
 
