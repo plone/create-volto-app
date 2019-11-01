@@ -36,7 +36,8 @@ before_install:
     echo "download-cache = $HOME/buildout-cache/downloads" >> $HOME/.buildout/default.cfg;
     echo "eggs-directory = $HOME/buildout-cache/eggs" >> $HOME/.buildout/default.cfg;
     fi
-
+  - git submodule update --init
+  - cat volto-starter-kit/package.json
 install:
   - if [ "$TEST_SUITE" == "plone" ]; then
     make build-backend;
