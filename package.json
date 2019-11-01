@@ -46,7 +46,8 @@
     "ci:cypress:run": "start-test ci:start-api-plone http-get://localhost:55001/plone ci:start-frontend",
     "ci:cypress:run:guillotina": "start-test ci:start-api-guillotina http-get://localhost:8081 ci:start-frontend-guillotina",
     "dry-release": "release-it --dry-run",
-    "release": "release-it"
+    "release": "release-it",
+    "release-alpha": "release-it major --preRelease=alpha"
   },
   "release-it": {
     "hooks": {

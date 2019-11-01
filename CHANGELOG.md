@@ -2,9 +2,9 @@
 
 ## 3.2.2 (unreleased)
 
-### Added
-
 ### Changes
+
+- Bump and release first version compatible with Volto 4 alpha 10 @sneridagh
 
 ## 3.2.1 (2019-10-16)
 
