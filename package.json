@@ -70,7 +70,7 @@
     }
   },
   "engines": {
-    "node": "^8 || ^10"
+    "node": "^10 || ^12"
   },
   "dependencies": {
     "ansi-escapes": "2.0.0",

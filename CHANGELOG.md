@@ -2,9 +2,9 @@
 
 ## 4.0.0 (unreleased)
 
-### Added
-
 ### Changes
+
+- Bump and release version for Volto 4 alpha 14 @sneridagh
 
 ## 4.0.0-alpha.2 (2019-11-01)
 
