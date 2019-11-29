@@ -6,6 +6,8 @@
 
 ### Changes
 
+- Pin the Guillotina docker image @sneridagh
+
 ## 4.0.0-alpha.3 (2019-11-24)
 
 ### Changes
