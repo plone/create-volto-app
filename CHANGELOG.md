@@ -1,12 +1,11 @@
 # Change Log
 
-## 4.0.0 (unreleased)
-
-### Added
+## 4.0.0-alpha.4 (2019-12-03)
 
 ### Changes
 
 - Pin the Guillotina docker image @sneridagh
+- Bump version to alpha 17, rebuild yarn.lock @sneridagh
 
 ## 4.0.0-alpha.3 (2019-11-24)
 
