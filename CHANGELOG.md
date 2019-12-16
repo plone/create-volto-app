@@ -2,9 +2,10 @@
 
 ## 4.0.0 (unreleased)
 
-### Added
-
 ### Changes
+
+- Bump to alpha 18, rebuild yarn.lock @sneridagh
+- Add Japanese translation to the template @sneridagh
 
 ## 4.0.0-alpha.4 (2019-12-03)
 
