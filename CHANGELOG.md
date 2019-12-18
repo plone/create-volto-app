@@ -2,9 +2,9 @@
 
 ## 4.0.0 (unreleased)
 
-### Added
-
 ### Changes
+
+- Include `yarn.lock` to template @sneridagh
 
 ## 4.0.0-alpha.5 (2019-12-16)
 

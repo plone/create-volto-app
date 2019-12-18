@@ -5,7 +5,7 @@ tests
 .travis
 .gitmodules
 test-requirements.txt
-yarn.lock
+./yarn.lock
 
 # Logs
 logs
