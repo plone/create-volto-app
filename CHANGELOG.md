@@ -4,7 +4,11 @@
 
 ### Added
 
+- New language translations to locales @sneridagh
+
 ### Changes
+
+- Bump to alpha 19 @sneridagh
 
 ## 4.0.0-alpha.6 (2019-12-18)
 
