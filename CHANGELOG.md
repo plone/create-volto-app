@@ -4,7 +4,11 @@
 
 ### Added
 
+- New language translation for pt @sneridagh
+
 ### Changes
+
+- Bump to alpha 20 @sneridagh
 
 ## 4.0.0-alpha.7 (2019-12-20)
 
