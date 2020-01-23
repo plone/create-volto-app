@@ -1,4 +1,5 @@
 volto-starter-kit/.git
+!volto-starter-kit/locales
 api
 g-api
 tests
