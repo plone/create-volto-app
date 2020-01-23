@@ -42,6 +42,8 @@ install:
     fi
   - npm -g install ./
   - create-volto-app my-volto-app
+  - ls my-volto-app/locales
+  - cat my-volto-app/package.json
   - yarn install --frozen-lockfile
   - yarn add cypress cypress-file-upload start-server-and-test xmlrpc
   - yarn cy:install
