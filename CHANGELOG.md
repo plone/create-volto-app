@@ -8,7 +8,7 @@
 
 ### Changes
 
-- Bump to alpha 20 @sneridagh
+- Bump to alpha 31 @sneridagh
 
 ## 4.0.0-alpha.7 (2019-12-20)
 
