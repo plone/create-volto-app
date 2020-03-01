@@ -4,7 +4,7 @@
 
 ### Added
 
-### Changes
+- Support for final release 4.0.0 @sneridagh
 
 ## 4.0.0-alpha.8 (2020-01-23)
 
