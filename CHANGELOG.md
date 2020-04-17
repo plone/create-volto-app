@@ -4,7 +4,8 @@
 
 ### Added
 
-### Changes
+- Bump for final release 5.0.0 @sneridagh
+- Add fix for issue while running tests with a built Plone local environment, patching Razzle for that @sneridagh
 
 ## 4.0.0 (2020-03-01)
 
