@@ -2,6 +2,8 @@
 
 ## 5.0.1 (unreleased)
 
+- Add remove `.eslintrc` in favor of `.eslintrc.js` that creates an alias to the inner `src` folder for each addon in the `addons` list @sneridagh
+
 ### Added
 
 ### Changes
