@@ -1,12 +1,10 @@
 # Change Log
 
-## 5.0.1 (unreleased)
-
-- Add remove `.eslintrc` in favor of `.eslintrc.js` that creates an alias to the inner `src` folder for each addon in the `addons` list @sneridagh
+## 5.1.0 (2020-05-10)
 
 ### Added
 
-### Changes
+- Add remove `.eslintrc` in favor of `.eslintrc.js` that creates an alias to the inner `src` folder for each addon in the `addons` list @sneridagh
 
 ## 5.0.0 (2020-04-17)
 
