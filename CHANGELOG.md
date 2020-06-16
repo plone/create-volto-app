@@ -1,10 +1,10 @@
 # Change Log
 
-## 6.0.1 (unreleased)
+## 6.2.0 (unreleased)
 
 ### Added
 
-### Changes
+- Support for Volto 6.2.0 @timo
 
 ## 6.0.0 (2020-05-18)
 
