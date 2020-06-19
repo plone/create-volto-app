@@ -6,6 +6,8 @@
 
 ### Changes
 
+- Removed git submodules
+
 ## 6.2.1 (2020-06-16)
 
 ### Added
