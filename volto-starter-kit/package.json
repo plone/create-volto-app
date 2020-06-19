@@ -2,7 +2,7 @@
   "name": "volto-starter-kit",
   "description": "Volto Starter Kit",
   "license": "MIT",
-  "version": "6.2.0",
+  "version": "6.2.2",
   "scripts": {
     "start": "razzle start",
     "postinstall": "yarn omelette && yarn patches",
