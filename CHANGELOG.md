@@ -1,6 +1,6 @@
 # Change Log
 
-## 6.2.2 (unreleased)
+## 6.2.3 (2020-06-19)
 
 ### Changes
 
