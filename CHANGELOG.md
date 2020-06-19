@@ -6,6 +6,8 @@
 
 ### Changes
 
+- Removed the submodule
+
 ## 6.2.1 (2020-06-16)
 
 ### Added
