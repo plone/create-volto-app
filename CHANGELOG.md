@@ -2,23 +2,15 @@
 
 ## 6.2.2 (unreleased)
 
-### Added
-
 ### Changes
 
-- Removed the submodule
+- Remove volto-starter-kit git submodule @iFlameing
 
 ## 6.2.1 (2020-06-16)
 
-### Added
-
 ### Changes
 
-## 6.2.1 (unreleased)
-
-### Added
-
-### Changes
+- Re-release 6.2.0 @timo
 
 ## 6.2.0 (2020-06-16)
 
