@@ -1,0 +1,9 @@
+{
+  "generator-node": {
+    "promptValues": {
+      "authorName": "Tiberiu Ichim",
+      "authorEmail": "tiberiu.ichim@gmail.com",
+      "authorUrl": ""
+    }
+  }
+}

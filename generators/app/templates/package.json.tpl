@@ -1,8 +1,8 @@
 {
-  "name": "volto-starter-kit",
-  "description": "Volto Starter Kit",
+  "name": "<%= projectName %>",
+  "description": "<%= projectDescription %>",
   "license": "MIT",
-  "version": "6.2.2",
+  "version": "1.0.0",
   "scripts": {
     "start": "razzle start",
     "postinstall": "yarn omelette && yarn patches",
@@ -13,6 +13,7 @@
     "start:prod": "NODE_ENV=production node build/server.js",
     "i18n": "NODE_ENV=production node node_modules/@plone/volto/src/i18n.js"
   },
+  "addons": <%- addons %>,
   "jest": {
     "modulePathIgnorePatterns": [
       "api"
@@ -88,7 +89,7 @@
     "node": "^10 || ^12"
   },
   "dependencies": {
-    "@plone/volto": "6.2.0"
+    "@plone/volto": "<%= voltoVersion %>"
   },
   "devDependencies": {
     "eslint-plugin-prettier": "3.1.3",

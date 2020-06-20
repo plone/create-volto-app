@@ -1,75 +1,38 @@
-[![Build Status](https://travis-ci.org/plone/create-volto-app.svg?branch=master)](https://travis-ci.org/plone/create-volto-app)
-
-# create-volto-app
-
-create-volto-app helps you to set up Volto with a single command.
+# generator-create-volto-app [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Coverage percentage][coveralls-image]][coveralls-url]
+> Scaffolding for Volto projects
 
 ## Installation
 
-Install create-volto-app:
+First, install [Yeoman](http://yeoman.io) and generator-create-volto-app using [npm](https://www.npmjs.com/) (we assume you have pre-installed [node.js](https://nodejs.org/)).
 
-```
-$ npm install -g yarn
-$ npm install -g @plone/create-volto-app
-```
-
-## Usage
-
-Create a new Volto project with:
-
-```
-$ create-volto-app myvoltoproject
+```bash
+npm install -g yo
+npm install -g generator-create-volto-app
 ```
 
-Replace `myvoltoproject` with the name/directory of your Volto project.
+Then generate your new project:
 
-Change the directory to your project to get started:
-
-```
-$ cy myvoltoproject
+```bash
+yo create-volto-app
 ```
 
-### Start Volto with `yarn start`
+## Getting To Know Yeoman
 
-Start Volto with:
+ * Yeoman has a heart of gold.
+ * Yeoman is a person with feelings and opinions, but is very easy to work with.
+ * Yeoman can be too opinionated at times but is easily convinced not to be.
+ * Feel free to [learn more about Yeoman](http://yeoman.io/).
 
-````
-$ yarn start
-````
+## License
 
-This runs the project in development mode.
-You can view your application at http://localhost:3000
+Apache-2.0 © [Tiberiu Ichim]()
 
-The page will reload if you make edits.
 
-Please note that you have to run a Plone backend as well.
-
-E.g. with docker:
-
-````
-$ docker run -it --rm --name=plone -p 8080:8080 -e SITE=Plone -e ADDONS="kitconcept.volto" -e ZCML="kitconcept.volto.cors" -e PROFILES="kitconcept.volto:default-homepage" plone
-````
-
-Consult the Volto docs for further details:
-
-https://www.npmjs.com/package/@plone/volto
-
-### Build a production build with `yarn build`
-
-Builds the app for production to the build folder.
-
-The build is minified and the filenames include the hashes. Your app is ready to be deployed!
-
-### Start the production build with `yarn start:prod`
-
-Runs the compiled app in production.
-
-You can again view your application at http://localhost:3000
-
-### Run unit tests with `yarn test`
-
-Runs the test watcher (Jest) in an interactive mode. By default, runs tests related to files changed since the last commit.
-
-### Update translations with `yarn i18n`
-
-Runs the test i18n runner which extracts all the translation strings and generates the needed files.
+[npm-image]: https://badge.fury.io/js/generator-create-volto-app.svg
+[npm-url]: https://npmjs.org/package/generator-create-volto-app
+[travis-image]: https://travis-ci.com/tiberiuichim/generator-create-volto-app.svg?branch=master
+[travis-url]: https://travis-ci.com/tiberiuichim/generator-create-volto-app
+[daviddm-image]: https://david-dm.org/tiberiuichim/generator-create-volto-app.svg?theme=shields.io
+[daviddm-url]: https://david-dm.org/tiberiuichim/generator-create-volto-app
+[coveralls-image]: https://coveralls.io/repos/tiberiuichim/generator-create-volto-app/badge.svg
+[coveralls-url]: https://coveralls.io/r/tiberiuichim/generator-create-volto-app
