@@ -1,10 +1,9 @@
 "use strict";
 
 const path = require("path");
+const chalk = require("chalk");
 const Generator = require("yeoman-generator");
 const utils = require("./utils");
-
-// Const chalk = require("chalk");
 
 const validateAddonName = name => {
   if (!name) return false;
@@ -12,40 +11,11 @@ const validateAddonName = name => {
   const bits = name.split(":");
   const pkgName = bits[0];
 
+  // FUTURE: test for some simple sanity, like no space in addon name, etc
   if (!pkgName) return false;
 
   return true;
-
-  // If (bits.length > 1) {
-  //   extraLoaders = bits[1];
-  //   const loaders = extraLoaders.split(",");
-  //   // TODO: test for some simple sanity, like no space in addon name, etc
-  //   // Better to use a regexp?
-  // }
 };
-
-// This.log("Error in retrieving Volto's yarn.lock: " + err.message);
-//
-const basicPrompt = [
-  {
-    type: "input",
-    name: "projectName",
-    message: "Project name",
-    default: path.basename(process.cwd())
-  },
-  {
-    type: "input",
-    name: "projectDescription",
-    message: "Project description",
-    default: "A Volto-powered Plone frontend"
-  },
-  {
-    type: "prompt",
-    name: "useAddons",
-    message: "Would you like to add addons?",
-    default: true
-  }
-];
 
 const addonPrompt = [
   {
@@ -76,15 +46,20 @@ module.exports = class extends Generator {
       desc:
         "Addon loader string, like: some-volto-addon:loadExtra,loadOtherExtra"
     });
+    this.option("description", {
+      type: String,
+      desc: "Project description",
+      default: "A Volto-powered Plone frontend"
+    });
+    this.args = args;
+    this.opts = opts;
   }
 
   async prompting() {
-    // This.log(`${chalk.red("Volto")} project scaffolding`);
-
-    this.log("Getting latest Volto version");
+    this.log(chalk.red("Getting latest Volto version"));
     const voltoVersion = await utils.getLatestVoltoVersion();
 
-    this.log("Retrieving Volto's yarn.lock");
+    this.log(chalk.red("Retrieving Volto's yarn.lock"));
     this.voltoYarnLock = await utils.getVoltoYarnLock(voltoVersion);
 
     this.log(`Using latest released Volto version: ${voltoVersion}`);
@@ -93,17 +68,57 @@ module.exports = class extends Generator {
       voltoVersion
     };
 
-    let props = await this.prompt(basicPrompt);
-    this.globals.projectName = props.projectName;
-    this.globals.projectDescription = props.projectDescription;
+    let props;
 
-    while (props.useAddons === true) {
-      /* eslint-disable no-await-in-loop */
-      props = await this.prompt(addonPrompt);
-      this.globals.addons.push(props.addonName);
+    if (this.args[0]) {
+      this.globals.projectName = this.args[0];
+    } else if (this.opts.addon || this.opts.description) {
+      this.globals.projectName = path.basename(process.cwd());
+    } else {
+      props = await this.prompt([
+        {
+          type: "input",
+          name: "projectName",
+          message: "Project name",
+          default: path.basename(process.cwd())
+        }
+      ]);
+      this.globals.projectName = props.projectName;
     }
 
-    this.globals.addons = JSON.stringify(this.globals.addons);
+    if (this.opts.description) {
+      this.globals.projectDescription = this.opts.description;
+    } else {
+      props = await this.prompt([
+        {
+          type: "input",
+          name: "projectDescription",
+          message: "Project description",
+          default: "A Volto-powered Plone frontend"
+        }
+      ]);
+      this.globals.projectDescription = props.projectDescription;
+    }
+
+    if (this.opts.addon) {
+      this.globals.addons = JSON.stringify(this.opts.addon);
+    } else {
+      props = await this.prompt([
+        {
+          type: "prompt",
+          name: "useAddons",
+          message: "Would you like to add addons?",
+          default: true
+        }
+      ]);
+      while (props.useAddons === true) {
+        /* eslint-disable no-await-in-loop */
+        props = await this.prompt(addonPrompt);
+        this.globals.addons.push(props.addonName);
+      }
+
+      this.globals.addons = JSON.stringify(this.globals.addons);
+    }
 
     // Return this.prompt(prompts).then(props => {
     //   // To access props later use this.props.someAnswer;
