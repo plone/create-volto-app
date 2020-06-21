@@ -1,11 +1,11 @@
 "use strict";
 
 const path = require("path");
-const https = require("https");
 const Generator = require("yeoman-generator");
+const utils = require("./utils");
 
 // Const chalk = require("chalk");
-//
+
 const validateAddonName = name => {
   if (!name) return false;
 
@@ -23,58 +23,6 @@ const validateAddonName = name => {
   //   // Better to use a regexp?
   // }
 };
-
-/*
- * Retrieves Volto's yarn.lock directly from github
- */
-async function getVoltoYarnLock(version) {
-  // https://raw.githubusercontent.com/plone/volto/6.2.0/yarn.lock
-  const url = `https://raw.githubusercontent.com/plone/volto/${version}/yarn.lock`;
-  return new Promise((resolve, reject) => {
-    https
-      .get(url, resp => {
-        let data = "";
-        resp.on("data", chunk => {
-          data += chunk;
-        });
-        resp.on("end", () => {
-          resolve(data);
-        });
-      })
-      .on("error", err => {
-        reject(err);
-        // This.log("Error in retrieving Volto's yarn.lock: " + err.message);
-      });
-  });
-}
-
-/*
- * Retrieves latest Volto released version from NPM registry
- */
-async function getLatestVoltoVersion() {
-  // Curl -H "Accept: application/vnd.npm.install-v1+json"
-  const url = "https://registry.npmjs.org/@plone/volto";
-  return new Promise((resolve, reject) => {
-    https
-      .get(
-        url,
-        { headers: { Accept: "application/vnd.npm.install-v1+json" } },
-        resp => {
-          let data = [];
-          resp.on("data", chunk => {
-            data.push(chunk);
-          });
-          resp.on("end", () => {
-            const res = JSON.parse(data.join(""));
-            resolve(res["dist-tags"].latest);
-          });
-        }
-      )
-      .on("error", err => {
-        reject(err.message);
-      });
-  });
-}
 
 // This.log("Error in retrieving Volto's yarn.lock: " + err.message);
 //
@@ -117,14 +65,33 @@ const addonPrompt = [
 ];
 
 module.exports = class extends Generator {
+  constructor(args, opts) {
+    super(args, opts);
+    this.argument("projectName", {
+      type: String,
+      default: path.basename(process.cwd())
+    });
+    this.option("addon", {
+      type: utils.parseAddonsOption,
+      desc:
+        "Addon loader string, like: some-volto-addon:loadExtra,loadOtherExtra"
+    });
+
+    // If (opts.addons) {
+    //   this.defaultAddons = parseAddonsOption(opts.addons);
+    // }
+
+    // console.log("opts", opts);
+  }
+
   async prompting() {
     // This.log(`${chalk.red("Volto")} project scaffolding`);
 
     this.log("Getting latest Volto version");
-    const voltoVersion = await getLatestVoltoVersion();
+    const voltoVersion = await utils.getLatestVoltoVersion();
 
     this.log("Retrieving Volto's yarn.lock");
-    this.voltoYarnLock = await getVoltoYarnLock(voltoVersion);
+    this.voltoYarnLock = await utils.getVoltoYarnLock(voltoVersion);
 
     this.log(`Using latest released Volto version: ${voltoVersion}`);
     this.globals = {
@@ -160,7 +127,9 @@ module.exports = class extends Generator {
       this.destinationPath("package.json"),
       this.globals
     );
+
     this.fs.write(this.destinationPath("yarn.lock"), this.voltoYarnLock);
+
     // This.fs.copy(
     //   this.templatePath("dummyfile.txt"),
     //   this.destinationPath("dummyfile.txt")
