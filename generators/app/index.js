@@ -76,8 +76,6 @@ module.exports = class extends Generator {
       desc:
         "Addon loader string, like: some-volto-addon:loadExtra,loadOtherExtra"
     });
-
-    console.log("opts", opts);
   }
 
   async prompting() {
