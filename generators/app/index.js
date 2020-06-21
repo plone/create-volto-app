@@ -51,6 +51,12 @@ module.exports = class extends Generator {
       desc: "Project description",
       default: "A Volto-powered Plone frontend"
     });
+
+    // This.option("no-install", {
+    //   type: Boolean,
+    //   desc: "Don't run 'yarn install' at the end",
+    //   default: true
+    // });
     this.args = args;
     this.opts = opts;
   }
@@ -139,13 +145,20 @@ module.exports = class extends Generator {
 
     this.fs.write(this.destinationPath("yarn.lock"), this.voltoYarnLock);
 
-    // This.fs.copy(
-    //   this.templatePath("dummyfile.txt"),
-    //   this.destinationPath("dummyfile.txt")
-    // );
+    this.fs.copy(this.templatePath(), this.destinationPath(), {
+      globOptions: {
+        ignore: ["**/*.tpl", "**/*~"]
+      }
+    });
   }
 
   install() {
-    // This.yarnInstall();
+    // If (!this.opts['no-install']) {
+    //   this.yarnInstall();
+    // }
+  }
+
+  end() {
+    this.log("Done. Now run 'yarn' to install dependencies");
   }
 };
