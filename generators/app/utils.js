@@ -57,10 +57,32 @@ async function getLatestVoltoVersion() {
  *
  * By default passing --addon one --addon two records "one,two" as string value
  * This won't work for us, as we'll get something like: one:x,y,two:z,t
+ * So this parser tries to recompute the addon as a list like:
+ * ['one:x,y', 'two:z,t']
  */
-function parseAddonsOption(addons) {
-  console.log(addons);
-  return [];
+
+function parseAddonsOption(junky) {
+  console.log("junky", junky);
+  const addons = [];
+  junky.split(",").forEach(bigBit => {
+    if (bigBit.includes(":") || addons.length === 0) {
+      addons.push(bigBit);
+    } else if (addons[addons.length - 1].includes(":")) {
+      // In case of input like: addon-one:loadExtraA,loadExtraB,addon-two
+      // it's not really possible to tell if the last bit is an addon or
+      // a loader name. So we use a simple heuristic and test for presence of
+      // dash (-) inside the name.
+      if (bigBit.includes("-")) {
+        addons.push(bigBit);
+      } else {
+        addons[addons.length - 1] += `,${bigBit}`;
+      }
+    } else {
+      addons.push(bigBit);
+    }
+  });
+
+  return addons;
 }
 
 module.exports = {

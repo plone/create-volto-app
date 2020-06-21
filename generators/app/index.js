@@ -72,16 +72,12 @@ module.exports = class extends Generator {
       default: path.basename(process.cwd())
     });
     this.option("addon", {
-      type: utils.parseAddonsOption,
+      type: arr => arr,
       desc:
         "Addon loader string, like: some-volto-addon:loadExtra,loadOtherExtra"
     });
 
-    // If (opts.addons) {
-    //   this.defaultAddons = parseAddonsOption(opts.addons);
-    // }
-
-    // console.log("opts", opts);
+    console.log("opts", opts);
   }
 
   async prompting() {
