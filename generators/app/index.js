@@ -1,14 +1,14 @@
-"use strict";
+'use strict';
 
-const path = require("path");
-const chalk = require("chalk");
-const Generator = require("yeoman-generator");
-const utils = require("./utils");
+const path = require('path');
+const chalk = require('chalk');
+const Generator = require('yeoman-generator');
+const utils = require('./utils');
 
 const validateAddonName = name => {
   if (!name) return false;
 
-  const bits = name.split(":");
+  const bits = name.split(':');
   const pkgName = bits[0];
 
   // FUTURE: test for some simple sanity, like no space in addon name, etc
@@ -19,37 +19,37 @@ const validateAddonName = name => {
 
 const addonPrompt = [
   {
-    type: "input",
-    name: "addonName",
+    type: 'input',
+    name: 'addonName',
     message:
-      "Addon name, plus extra loaders, like: volto-addon:loadExtra,loadAnotherExtra",
-    default: "",
-    validate: validateAddonName
+      'Addon name, plus extra loaders, like: volto-addon:loadExtra,loadAnotherExtra',
+    default: '',
+    validate: validateAddonName,
   },
   {
-    type: "prompt",
-    name: "useAddons",
-    message: "Would you like to add another addon?",
-    default: true
-  }
+    type: 'prompt',
+    name: 'useAddons',
+    message: 'Would you like to add another addon?',
+    default: true,
+  },
 ];
 
 module.exports = class extends Generator {
   constructor(args, opts) {
     super(args, opts);
-    this.argument("projectName", {
+    this.argument('projectName', {
       type: String,
-      default: path.basename(process.cwd())
+      default: path.basename(process.cwd()),
     });
-    this.option("addon", {
+    this.option('addon', {
       type: arr => arr,
       desc:
-        "Addon loader string, like: some-volto-addon:loadExtra,loadOtherExtra"
+        'Addon loader string, like: some-volto-addon:loadExtra,loadOtherExtra',
     });
-    this.option("description", {
+    this.option('description', {
       type: String,
-      desc: "Project description",
-      default: "A Volto-powered Plone frontend"
+      desc: 'Project description',
+      default: 'A Volto-powered Plone frontend',
     });
 
     // This.option("no-install", {
@@ -62,7 +62,7 @@ module.exports = class extends Generator {
   }
 
   async prompting() {
-    this.log(chalk.red("Getting latest Volto version"));
+    this.log(chalk.red('Getting latest Volto version'));
     const voltoVersion = await utils.getLatestVoltoVersion();
 
     this.log(chalk.red("Retrieving Volto's yarn.lock"));
@@ -71,7 +71,7 @@ module.exports = class extends Generator {
     this.log(`Using latest released Volto version: ${voltoVersion}`);
     this.globals = {
       addons: [],
-      voltoVersion
+      voltoVersion,
     };
 
     let props;
@@ -83,11 +83,11 @@ module.exports = class extends Generator {
     } else {
       props = await this.prompt([
         {
-          type: "input",
-          name: "projectName",
-          message: "Project name",
-          default: path.basename(process.cwd())
-        }
+          type: 'input',
+          name: 'projectName',
+          message: 'Project name',
+          default: path.basename(process.cwd()),
+        },
       ]);
       this.globals.projectName = props.projectName;
     }
@@ -97,11 +97,11 @@ module.exports = class extends Generator {
     } else {
       props = await this.prompt([
         {
-          type: "input",
-          name: "projectDescription",
-          message: "Project description",
-          default: "A Volto-powered Plone frontend"
-        }
+          type: 'input',
+          name: 'projectDescription',
+          message: 'Project description',
+          default: 'A Volto-powered Plone frontend',
+        },
       ]);
       this.globals.projectDescription = props.projectDescription;
     }
@@ -111,11 +111,11 @@ module.exports = class extends Generator {
     } else {
       props = await this.prompt([
         {
-          type: "prompt",
-          name: "useAddons",
-          message: "Would you like to add addons?",
-          default: true
-        }
+          type: 'prompt',
+          name: 'useAddons',
+          message: 'Would you like to add addons?',
+          default: true,
+        },
       ]);
       while (props.useAddons === true) {
         /* eslint-disable no-await-in-loop */
@@ -138,17 +138,17 @@ module.exports = class extends Generator {
 
   writing() {
     this.fs.copyTpl(
-      this.templatePath("package.json.tpl"),
-      this.destinationPath("package.json"),
-      this.globals
+      this.templatePath('package.json.tpl'),
+      this.destinationPath('package.json'),
+      this.globals,
     );
 
-    this.fs.write(this.destinationPath("yarn.lock"), this.voltoYarnLock);
+    this.fs.write(this.destinationPath('yarn.lock'), this.voltoYarnLock);
 
     this.fs.copy(this.templatePath(), this.destinationPath(), {
       globOptions: {
-        ignore: ["**/*.tpl", "**/*~"]
-      }
+        ignore: ['**/*.tpl', '**/*~'],
+      },
     });
   }
 

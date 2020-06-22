@@ -1,4 +1,4 @@
-const https = require("https");
+const https = require('https');
 
 /*
  * Retrieves Volto's yarn.lock directly from github
@@ -8,15 +8,15 @@ async function getVoltoYarnLock(version) {
   return new Promise((resolve, reject) => {
     https
       .get(url, resp => {
-        let data = "";
-        resp.on("data", chunk => {
+        let data = '';
+        resp.on('data', chunk => {
           data += chunk;
         });
-        resp.on("end", () => {
+        resp.on('end', () => {
           resolve(data);
         });
       })
-      .on("error", err => {
+      .on('error', err => {
         reject(err);
         // This.log("Error in retrieving Volto's yarn.lock: " + err.message);
       });
@@ -28,24 +28,24 @@ async function getVoltoYarnLock(version) {
  */
 async function getLatestVoltoVersion() {
   // Curl -H "Accept: application/vnd.npm.install-v1+json"
-  const url = "https://registry.npmjs.org/@plone/volto";
+  const url = 'https://registry.npmjs.org/@plone/volto';
   return new Promise((resolve, reject) => {
     https
       .get(
         url,
-        { headers: { Accept: "application/vnd.npm.install-v1+json" } },
+        { headers: { Accept: 'application/vnd.npm.install-v1+json' } },
         resp => {
           let data = [];
-          resp.on("data", chunk => {
+          resp.on('data', chunk => {
             data.push(chunk);
           });
-          resp.on("end", () => {
-            const res = JSON.parse(data.join(""));
-            resolve(res["dist-tags"].latest);
+          resp.on('end', () => {
+            const res = JSON.parse(data.join(''));
+            resolve(res['dist-tags'].latest);
           });
-        }
+        },
       )
-      .on("error", err => {
+      .on('error', err => {
         reject(err.message);
       });
   });
@@ -53,5 +53,5 @@ async function getLatestVoltoVersion() {
 
 module.exports = {
   getLatestVoltoVersion,
-  getVoltoYarnLock
+  getVoltoYarnLock,
 };
