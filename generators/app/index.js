@@ -41,6 +41,10 @@ module.exports = class extends Generator {
       type: String,
       default: path.basename(process.cwd()),
     });
+    this.option('skip-addons', {
+      type: Boolean,
+      desc: "Don't ask for addons as part of the scaffolding",
+    });
     this.option('addon', {
       type: arr => arr,
       desc:
@@ -52,11 +56,6 @@ module.exports = class extends Generator {
       default: 'A Volto-powered Plone frontend',
     });
 
-    // This.option("no-install", {
-    //   type: Boolean,
-    //   desc: "Don't run 'yarn install' at the end",
-    //   default: true
-    // });
     this.args = args;
     this.opts = opts;
   }
@@ -109,21 +108,25 @@ module.exports = class extends Generator {
     if (this.opts.addon) {
       this.globals.addons = JSON.stringify(this.opts.addon);
     } else {
-      props = await this.prompt([
-        {
-          type: 'prompt',
-          name: 'useAddons',
-          message: 'Would you like to add addons?',
-          default: true,
-        },
-      ]);
-      while (props.useAddons === true) {
-        /* eslint-disable no-await-in-loop */
-        props = await this.prompt(addonPrompt);
-        this.globals.addons.push(props.addonName);
-      }
+      if (!this.opts['skip-addons']) {
+        props = await this.prompt([
+          {
+            type: 'prompt',
+            name: 'useAddons',
+            message: 'Would you like to add addons?',
+            default: true,
+          },
+        ]);
+        while (props.useAddons === true) {
+          /* eslint-disable no-await-in-loop */
+          props = await this.prompt(addonPrompt);
+          this.globals.addons.push(props.addonName);
+        }
 
-      this.globals.addons = JSON.stringify(this.globals.addons);
+        this.globals.addons = JSON.stringify(this.globals.addons);
+      } else {
+        this.globals.addons = JSON.stringify([]);
+      }
     }
 
     // Return this.prompt(prompts).then(props => {
@@ -153,9 +156,9 @@ module.exports = class extends Generator {
   }
 
   install() {
-    // If (!this.opts['no-install']) {
-    //   this.yarnInstall();
-    // }
+    if (!this.opts['skip-install']) {
+      this.yarnInstall();
+    }
   }
 
   end() {
