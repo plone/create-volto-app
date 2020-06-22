@@ -5,6 +5,8 @@ const chalk = require('chalk');
 const Generator = require('yeoman-generator');
 const utils = require('./utils');
 
+const currentDir = path.basename(process.cwd());
+
 const validateAddonName = name => {
   if (!name) return false;
 
@@ -39,7 +41,7 @@ module.exports = class extends Generator {
     super(args, opts);
     this.argument('projectName', {
       type: String,
-      default: path.basename(process.cwd()),
+      default: currentDir,
     });
     this.option('skip-addons', {
       type: Boolean,
@@ -53,7 +55,6 @@ module.exports = class extends Generator {
     this.option('description', {
       type: String,
       desc: 'Project description',
-      default: 'A Volto-powered Plone frontend',
     });
 
     this.args = args;
@@ -75,9 +76,9 @@ module.exports = class extends Generator {
 
     let props;
 
-    if (this.args[0]) {
+    if (!!this.args[0]) {
       this.globals.projectName = this.args[0];
-    } else if (this.opts.addon || this.opts.description) {
+    } else if (this.opts.addon) {
       this.globals.projectName = path.basename(process.cwd());
     } else {
       props = await this.prompt([
@@ -128,27 +129,20 @@ module.exports = class extends Generator {
         this.globals.addons = JSON.stringify([]);
       }
     }
-
-    // Return this.prompt(prompts).then(props => {
-    //   // To access props later use this.props.someAnswer;
-    //   this.props = props;
-    //   console.log("props", props);
-    //   this.prompt(nextPrompt).then(props => {
-    //     console.log("next props", props);
-    //   });
-    // });
   }
 
   writing() {
+    const base =
+      currentDir === this.globals.projectName ? '.' : this.globals.projectName;
     this.fs.copyTpl(
       this.templatePath('package.json.tpl'),
-      this.destinationPath('package.json'),
+      this.destinationPath(base, 'package.json'),
       this.globals,
     );
 
-    this.fs.write(this.destinationPath('yarn.lock'), this.voltoYarnLock);
+    this.fs.write(this.destinationPath(base, 'yarn.lock'), this.voltoYarnLock);
 
-    this.fs.copy(this.templatePath(), this.destinationPath(), {
+    this.fs.copy(this.templatePath(), this.destinationPath(base), {
       globOptions: {
         ignore: ['**/*.tpl', '**/*~'],
       },
@@ -157,7 +151,11 @@ module.exports = class extends Generator {
 
   install() {
     if (!this.opts['skip-install']) {
-      this.yarnInstall();
+      const base =
+        currentDir === this.globals.projectName
+          ? '.'
+          : this.globals.projectName;
+      this.yarnInstall(null, { cwd: base });
     }
   }
 
