@@ -2,15 +2,16 @@
 
 # create-volto-app
 
-create-volto-app helps you to set up Volto with a single command.
+create-volto-app is a Yeoman generator that helps you to set up Volto with a single command.
 
 ## Installation
 
 Install create-volto-app:
+First, install [Yeoman](http://yeoman.io) and generator-create-volto-app using [npm](https://www.npmjs.com/) (we assume you have pre-installed [node.js](https://nodejs.org/)).
 
 ```
-$ npm install -g yarn
-$ npm install -g @plone/create-volto-app
+$ npm install -g yo
+$ npm install -g generator-create-volto-app
 ```
 
 ## Usage
@@ -18,14 +19,34 @@ $ npm install -g @plone/create-volto-app
 Create a new Volto project with:
 
 ```
-$ create-volto-app myvoltoproject
+$ yo create-volto-app
 ```
 
-Replace `myvoltoproject` with the name/directory of your Volto project.
+This will bootstrap a new Volto project inside the current folder. It will ask
+a few questions: project name, project description and a list of addons. Run:
+
+```
+$ yo create-volto-app --help
+```
+
+to see a full list of options and arguments.
+
+You can use it in full non-interactive mode by passing something like:
+
+```
+yo create-volto-app myvoltoproject --description "My Volto project" --skip-addons --skip-install
+```
+
+You can also specify addons to load, like:
+
+```
+yo create-volto-app myvoltoproject --description "My Volto project" --addon "volto-formbuilder:x,y" --addon "volto-slate:z,t"
+```
 
 Change the directory to your project to get started:
 
 ```
+$ yarn
 $ cy myvoltoproject
 ```
 
@@ -33,9 +54,9 @@ $ cy myvoltoproject
 
 Start Volto with:
 
-````
+```
 $ yarn start
-````
+```
 
 This runs the project in development mode.
 You can view your application at http://localhost:3000
@@ -46,9 +67,9 @@ Please note that you have to run a Plone backend as well.
 
 E.g. with docker:
 
-````
+```
 $ docker run -it --rm --name=plone -p 8080:8080 -e SITE=Plone -e ADDONS="kitconcept.volto" -e ZCML="kitconcept.volto.cors" -e PROFILES="kitconcept.volto:default-homepage" plone
-````
+```
 
 Consult the Volto docs for further details:
 
