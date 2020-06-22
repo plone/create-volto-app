@@ -40,6 +40,7 @@ install:
   - if [ "$TEST_SUITE" == "plone" ]; then
     make build-backend;
     fi
+  - npm -g install yo
   - npm -g install ./
   - create-volto-app my-volto-app
   - yarn install --frozen-lockfile
