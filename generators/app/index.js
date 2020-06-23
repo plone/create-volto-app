@@ -107,7 +107,11 @@ module.exports = class extends Generator {
     }
 
     if (this.opts.addon) {
-      this.globals.addons = JSON.stringify(this.opts.addon);
+      const addons =
+        typeof this.opts.addon === 'string'
+          ? [this.opts.addon]
+          : this.opts.addon;
+      this.globals.addons = JSON.stringify(addons);
     } else {
       if (!this.opts['skip-addons']) {
         props = await this.prompt([
