@@ -6,6 +6,8 @@
 
 ### Changes
 
+- Improve default integration with addons @tiberiuichim
+
 ## 6.2.3 (2020-06-19)
 
 ### Changes
