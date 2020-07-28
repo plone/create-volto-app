@@ -6,6 +6,8 @@
 
 ### Changes
 
+- Improve .eslintrc in volto-starter-kit to cover more editor linting integration scenarios @tiberiuichim
+
 ## 6.2.3 (2020-06-19)
 
 ### Changes

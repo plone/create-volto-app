@@ -1,5 +1,5 @@
 const path = require('path');
-const projectRootPath = path.resolve('.');
+const projectRootPath = __dirname;
 const packageJson = require(path.join(projectRootPath, 'package.json'));
 
 // Extends ESlint configuration for adding the aliases to `src` directories in Volto addons
@@ -13,14 +13,15 @@ if (packageJson.addons) {
 }
 
 module.exports = {
-  extends: './node_modules/@plone/volto/.eslintrc',
+  extends: `${projectRootPath}/node_modules/@plone/volto/.eslintrc`,
   settings: {
     'import/resolver': {
       alias: {
         map: [
           ['@plone/volto', '@plone/volto/src'],
           ...addonsAliases,
-          ['@package', './src'],
+          ['@package', `${__dirname}/src`],
+          ['~', `${__dirname}/src`],
         ],
         extensions: ['.js', '.jsx', '.json'],
       },
