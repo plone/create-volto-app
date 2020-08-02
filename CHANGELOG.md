@@ -6,8 +6,8 @@
 
 ### Changes
 
-- Improve default integration with addons @tiberiuichim
-- Improve .eslintrc in volto-starter-kit to cover more editor linting integration scenarios @tiberiuichim
+- Don't export empty addonReducers and addonRoutes in default config.js @tiberiuichim
+- Improve .eslintrc in volto-starter-kit to cover addons and more editor linting integration scenarios @tiberiuichim
 
 ## 6.2.3 (2020-06-19)
 
