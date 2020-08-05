@@ -13,4 +13,7 @@ test-acceptance-server:
 test-acceptance-guillotina:
 	docker-compose -f g-api/docker-compose.yml up > /dev/null
 
+release:
+	node_modules/.bin/release-it
+
 .PHONY: all test-acceptance
