@@ -1,16 +1,24 @@
+const jsConfig = require('./jsconfig').compilerOptions;
 const path = require('path');
 const projectRootPath = __dirname;
 const packageJson = require(path.join(projectRootPath, 'package.json'));
 
+const pathsConfig = jsConfig.paths;
+let voltoPath = './node_modules/@plone/volto';
+Object.keys(pathsConfig).forEach((pkg) => {
+  if (pkg === '@plone/volto') {
+    voltoPath = `./${jsConfig.baseUrl}/${pathsConfig[pkg][0]}`;
+  }
+});
+
+const AddonConfigurationRegistry = require(`${voltoPath}/addon-registry.js`);
+const reg = new AddonConfigurationRegistry(__dirname);
+
 // Extends ESlint configuration for adding the aliases to `src` directories in Volto addons
-const addonsAliases = [];
-if (packageJson.addons) {
-  const addons = packageJson.addons;
-  addons.forEach(addon => {
-    const addonPath = `${addon}/src`;
-    addonsAliases.push([addon, addonPath]);
-  });
-}
+const addonAliases = Object.keys(reg.packages).map((o) => [
+  o,
+  reg.packages[o].modulePath,
+]);
 
 module.exports = {
   extends: `${projectRootPath}/node_modules/@plone/volto/.eslintrc`,
@@ -19,7 +27,7 @@ module.exports = {
       alias: {
         map: [
           ['@plone/volto', '@plone/volto/src'],
-          ...addonsAliases,
+          ...addonAliases,
           ['@package', `${__dirname}/src`],
           ['~', `${__dirname}/src`],
         ],
