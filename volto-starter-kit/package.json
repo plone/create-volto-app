@@ -2,7 +2,7 @@
   "name": "volto-starter-kit",
   "description": "Volto Starter Kit",
   "license": "MIT",
-  "version": "6.2.4",
+  "version": "8.4.0",
   "scripts": {
     "start": "razzle start",
     "postinstall": "yarn omelette && yarn patches",
@@ -88,9 +88,10 @@
     "node": "^10 || ^12"
   },
   "dependencies": {
-    "@plone/volto": "7.7.0"
+    "@plone/volto": "8.4.0"
   },
   "devDependencies": {
+    "@babel/core": "7.11.1",
     "eslint-plugin-prettier": "3.1.3",
     "prettier": "2.0.5",
     "stylelint": "13.3.3",
