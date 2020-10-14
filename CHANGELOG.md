@@ -21,6 +21,7 @@
 - Upgrade Volto to 7.7.0 @iFlameing @timo
 - Improve default integration with addons @tiberiuichim
 - Improve .eslintrc in volto-starter-kit to cover more editor linting integration scenarios @tiberiuichim
+- Alias `load-volto-addons` to jest-addon-loader.js in package.json @tiberiuichim
 
 ## 6.2.3 (2020-06-19)
 
