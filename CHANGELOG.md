@@ -1,5 +1,11 @@
 # Change Log
 
+## 6.2.4 (unreleased)
+
+### Added
+
+- Added `@babel/core` to the project build deps to avoid yarn hoisting issues @sneridagh
+
 ## 6.2.4 (2020-08-05)
 
 ### Added
