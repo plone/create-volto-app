@@ -2,7 +2,7 @@
   "name": "volto-starter-kit",
   "description": "Volto Starter Kit",
   "license": "MIT",
-  "version": "6.2.2",
+  "version": "8.4.0",
   "scripts": {
     "start": "razzle start",
     "postinstall": "yarn omelette && yarn patches",
@@ -31,6 +31,7 @@
     "moduleNameMapper": {
       "@plone/volto/babel": "<rootDir>/node_modules/@plone/volto/babel",
       "@plone/volto/(.*)$": "<rootDir>/node_modules/@plone/volto/src/$1",
+      "load-volto-addons": "<rootDir>/node_modules/@plone/volto/jest-addons-loader.js",
       "@package/(.*)$": "<rootDir>/src/$1",
       "~/(.*)$": "<rootDir>/src/$1"
     },
@@ -88,9 +89,10 @@
     "node": "^10 || ^12"
   },
   "dependencies": {
-    "@plone/volto": "6.2.0"
+    "@plone/volto": "8.4.0"
   },
   "devDependencies": {
+    "@babel/core": "7.11.1",
     "eslint-plugin-prettier": "3.1.3",
     "prettier": "2.0.5",
     "stylelint": "13.3.3",

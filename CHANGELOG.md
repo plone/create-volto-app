@@ -1,13 +1,28 @@
 # Change Log
 
-## 6.2.4 (unreleased)
+## 6.3.1 (unreleased)
+
+### Added
+
+- Don't export empty addonReducers and addonRoutes in default config.js @tiberiuichim
+- Improve .eslintrc in volto-starter-kit to cover addons and more editor linting integration scenarios @tiberiuichim
+- Alias `load-volto-addons` to jest-addon-loader.js in package.json @tiberiuichim
+
+## 6.3.0 (2020-10-14)
+
+### Added
+
+- Added `@babel/core` to the project build deps to avoid yarn hoisting issues @sneridagh
+
+## 6.2.4 (2020-08-05)
 
 ### Added
 
 ### Changes
 
-- Don't export empty addonReducers and addonRoutes in default config.js @tiberiuichim
-- Improve .eslintrc in volto-starter-kit to cover addons and more editor linting integration scenarios @tiberiuichim
+- Upgrade Volto to 7.7.0 @iFlameing @timo
+- Improve default integration with addons @tiberiuichim
+- Improve .eslintrc in volto-starter-kit to cover more editor linting integration scenarios @tiberiuichim
 
 ## 6.2.3 (2020-06-19)
 
