@@ -1,6 +1,6 @@
 # Change Log
 
-## 6.4.1 (unreleased)
+## 6.5.0 (2020-11-04)
 
 ### Added
 
