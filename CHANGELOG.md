@@ -4,7 +4,7 @@
 
 ### Added
 
-### Changes
+- Support Node 14 @sneridagh
 
 ## 6.4.0 (2020-10-15)
 
