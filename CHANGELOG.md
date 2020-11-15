@@ -4,7 +4,11 @@
 
 ### Added
 
-### Changes
+- Upgrade to Volto 9 @sneridagh
+
+### Internal
+
+- Move to GitHub actions @sneridagh
 
 ## 6.5.0 (2020-11-04)
 
