@@ -85,6 +85,13 @@
     },
     "ignoreFiles": "theme/themes/default/**/*.overrides"
   },
+  "browserslist": [
+    ">1%",
+    "last 4 versions",
+    "Firefox ESR",
+    "not ie 11",
+    "not dead"
+  ],
   "engines": {
     "node": "^10 || ^12 || ^14"
   },
