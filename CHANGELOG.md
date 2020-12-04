@@ -2,9 +2,9 @@
 
 ## 7.0.2 (unreleased)
 
-### Added
+### Breaking
 
-### Changes
+- Remove the Razzle plugins patch @sneridagh
 
 ## 7.0.1 (2020-11-16)
 
