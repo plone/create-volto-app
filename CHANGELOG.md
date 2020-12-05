@@ -6,6 +6,8 @@
 
 ### Changes
 
+- Readme typo fix: `cy myvoltoproject` -> `cd myvoltoproject`
+
 ## 8.0.0 (2020-12-04)
 
 ### Breaking
