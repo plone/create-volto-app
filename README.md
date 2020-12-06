@@ -26,7 +26,7 @@ Replace `myvoltoproject` with the name/directory of your Volto project.
 Change the directory to your project to get started:
 
 ```
-$ cy myvoltoproject
+$ cd myvoltoproject
 ```
 
 ### Start Volto with `yarn start`
