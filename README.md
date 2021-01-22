@@ -1,5 +1,15 @@
 [![Build Status](https://travis-ci.org/plone/create-volto-app.svg?branch=master)](https://travis-ci.org/plone/create-volto-app)
 
+# Deprecation notice
+
+This project is deprecated in favor of the Yeoman-based Volto project generator:
+
+https://github.com/plone/volto/tree/master/packages/generator-volto
+
+Please also refer to the new documentation in:
+
+https://docs.voltocms.com
+
 # create-volto-app
 
 create-volto-app helps you to set up Volto with a single command.
